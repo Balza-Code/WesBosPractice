@@ -9,7 +9,7 @@ Each folder corresponds to a different day/challenge, focused on vanilla JavaScr
 |-----|------------------------|------------------|------------------------------------------------|
 | 01  | Drum Kit               | `/drum-kit`      | DOM events, key detection, audio playback     |
 | 02  | CSS + JS Clock         | `/css-js-clock`  | Date object, transform rotation, live updates |
-| 03  | (Agregar el próximo)  | `/css-variables` | (Ej. uso de variables CSS, JS + estilos)      |
+| 03  | Update CSS variables with JS  | `/css-variables` | Updating CSS with JS in real time      |
 
 ## 🚀 Goals & Focus
 

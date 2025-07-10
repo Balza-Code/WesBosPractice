@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:,">
+    <title>JS DrumKit</title>
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">Clap</span>
+      </div>
+
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">HiHat</span>
+      </div>
+
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">Kick</span>
+      </div>
+
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">OpenHat</span>
+      </div>
+
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">Crash</span>
+      </div>
+
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">Perc1</span>
+      </div>
+
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">Snare</span>
+      </div>
+
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">Perc2</span>
+      </div>
+
+      
+
+    </div>
+    <audio data-key="65" src="/Samples/PRISMLofi_Clap_1Raindrops.wav"></audio>
+    <audio data-key="83" src="/Samples/PRISMLofi_ClosedHH_1Raindrops.wav"></audio>
+    <audio data-key="68" src="/Samples/PRISMLofi_Kick_1Raindrops.wav"></audio>
+    <audio data-key="70" src="/Samples/PRISMLofi_OpendHH_1Raindrops.wav"></audio>
+    <audio data-key="71" src="/Samples/PRISMLofi_Crash_1Raindrops.wav"></audio>
+    <audio data-key="72" src="/Samples/PRISMLofi_Perc1_1Raindrops.wav"></audio>
+    <audio data-key="74" src="/Samples/PRISMLofi_Snare_1Raindrops.wav"></audio>
+    <audio data-key="75" src="/Samples/PRISMLofi_Perc2_1Raindrops.wav"></audio>
+  </body>
+  <script>
+    const playSound = (e) => {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+      if(!audio) return // Stop the function
+      audio.currentTime = 0 //rewind to the start
+      audio.play()
+      key.classList.add('active')
+
+    }
+
+    const removeTransition = (e) => {
+      if(e.propertyName !== 'transform') return; // Skip if its not a transform
+      e.target.classList.remove('active');
+    }
+
+    window.addEventListener('keydown', playSound)
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+  </script>
+</html>

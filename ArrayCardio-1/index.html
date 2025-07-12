@@ -61,45 +61,40 @@
         "Blake, William",
       ];
 
-
       // Array prototype.filter()
       // 1. Filter the list of inventors for those who where born in the 1500's
 
       const bornIn1500 = inventors.filter((inventor) => {
-        if (inventor.year >= 1500 && inventor.year < 1600){
-          return true
-        } 
-
+        if (inventor.year >= 1500 && inventor.year < 1600) {
+          return true;
+        }
       });
-      console.log(bornIn1500)
-     
-      
+      console.log(bornIn1500);
+
       // Array.prototype.map()
       // 2. Give us an array of the inventors first and last name
 
       const fullNames = inventors.map((inventor) => {
-        let {first,last} = inventor
-        return `${first} ${last}`
-        
+        let { first, last } = inventor;
+        return `${first} ${last}`;
       });
 
       console.log(fullNames);
-
 
       // Array.prototype.sort()
       // 3.  Sort the inventors by birtdate, oldest to youngest
 
       const inventorsAges = inventors.sort((a, b) => {
         return a.year - b.year;
-      })
+      });
 
-      console.log(inventorsAges)
-      
+      console.log(inventorsAges);
+
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live?
-      const yearsLived = inventors.reduce((total, inventor) =>{
+      const yearsLived = inventors.reduce((total, inventor) => {
         return total + (inventor.passed - inventor.year);
-      }, 0)
+      }, 0);
       console.log(yearsLived);
 
       // 5. Sort the inventors by years lived
@@ -107,17 +102,55 @@
         const lastGuy = a.passed - a.year;
         const nextGuy = b.passed - b.year;
         return lastGuy > nextGuy ? -1 : 1;
-      }) 
-      console.table(oldest)
+      });
+      console.table(oldest);
 
       // 6. crate a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-      const category = document.querySelector('.mw-category');
-      const links = Array.from(category.querySelectorAll('a'));
-      const de = links
-            .map(link => link.textContent)
-            .filter(streeName => streeName.includes('de'));
+      // const category = document.querySelector('.mw-category');
+      // const links = Array.from(category.querySelectorAll('a'));
+      // const de = links
+      //       .map(link => link.textContent)
+      //       .filter(streeName => streeName.includes('de'));
+
+      // 7. sort Exercise
+      // Sort the people alphabetically by last name
+      const orderedPeoppleByLast = people.sort((a, b) => {
+        const aLast = a.split(", ")[0];
+        const bLast = b.split(", ")[0];
+        return aLast.localeCompare(bLast);
+      });
+      console.table(orderedPeoppleByLast);
+
+      // 8. Reduce Exercise
+      // Sum up the instances of each oh these
+      const data = [
+        "car",
+        "car",
+        "truck",
+        "truck",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "car",
+        "truck",
+      ];
+
+      const count = data.reduce((obj, item) => {
+        if(!obj[item]){
+          obj[item] = 0
+        }
+        obj[item]++
+        return obj
+      }, {}
+      )
+      console.log(count)
     </script>
   </body>
 </html>

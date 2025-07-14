@@ -10,7 +10,8 @@ Each folder corresponds to a different day/challenge, focused on vanilla JavaScr
 | 01  | Drum Kit               | `/drum-kit`      | DOM events, key detection, audio playback     |
 | 02  | CSS + JS Clock         | `/css-js-clock`  | Date object, transform rotation, live updates |
 | 03  | Update CSS variables with JS  | `/css-variables` | Updating CSS with JS in real time      |
-| 04  | Array cardio  | `/ArrayCardio-1` | Variety of mthdos for arrays in JS      |
+| 04  | Array cardio           | `/ArrayCardio-1` | Variety of mthdos for arrays in JS      |
+| 05  | Flex panel Images Gallery  | `/FlexPanelsImagegallery` | I built a responsive image gallery using Flexbox. |
 
 
 ## 🚀 Goals & Focus

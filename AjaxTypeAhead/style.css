@@ -1,9 +1,13 @@
+html{
+  scroll-behavior: smooth;
+}
 body{
   padding: 0;
   margin: 0;
   background: #FFC004;
   display: flex;
   justify-content: center;
+  
 }
 
 form{
@@ -29,11 +33,38 @@ form{
   flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 0 0;
 }
 
 li{
   background: #ffe;
-  margin: 1px;
-  padding: 30px 60px ;
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  transition: clip-path 0.3s;
+}
+
+.name{
+  text-align: left;
+}
+
+.suggestions li:nth-child(even) {
+  clip-path: polygon(
+    0% 0%,    /* top-left */
+    100% 10%, /* top-right */
+    100% 90%, /* bottom-right */
+    0% 100%   /* bottom-left */
+  );
+}
+
+.suggestions li:nth-child(odd) {
+  clip-path: polygon(
+    0% 10%,   /* top-left */
+    100% 0%,  /* top-right */
+    100% 100%,/* bottom-right */
+    0% 90%    /* bottom-left */
+  );
 }

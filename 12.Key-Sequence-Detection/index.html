@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Sequence Detector.</title>
+</head>
+<body>
+  <script>
+    const pressed = []
+    const secretCode = 'balzacode'
+    window.addEventListener('keyup', (e) => {
+      
+      pressed.push(e.key);
+      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+      pressed.join('').includes(secretCode) ? console.log('DING DING YOU DIT IT!') : console.log(e.key)
+      
+    });
+  </script>
+</body>
+</html>

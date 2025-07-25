@@ -16,6 +16,9 @@ Each folder corresponds to a different day/challenge, focused on vanilla JavaScr
 | 07  | Array cardio 2         | `/ArrayCardio-2` | Variety of methdos for arrays in JS Again!    |
 | 09  | Fun with HTML5 canvas  | `/FunWithHTML5Canvas` | Draw in the HTML5 Canvas                 |
 | 10  | Console Triks!         | `/Console-triks` | Differnt types of console messagges           |
+| 11  | Custom Video Player    | `/11.Custom-HTML-Video-Player` | Differents methods to manage a video |
+| 12  | Key Sequence Detect    | `/12.Key-Sequence-Detectetion` | How to detect the keys pressed in keyboard |
+| 13  | Slide in Scroll    | `/13.Slide-in-Scroll` | Handle differents points in viewport hight  |
 
 
 
